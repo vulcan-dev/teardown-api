@@ -16,3 +16,6 @@ Initial Release
 ## Version 0.0.5
 - Fixed bad arguments
 - Added description to arguments and return values
+
+## Version 0.0.6
+- Fixed path to snippet (again 😎)
