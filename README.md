@@ -6,3 +6,6 @@ Initial Release
 ## Version 0.0.2
 - Change Display Name
 - Add Icon
+
+## Version 0.0.3
+- Fixed README.md
