@@ -1,9 +1,10 @@
 {
     "name": "teardown-api",
-    "displayName": "teardown-api",
+    "displayName": "Teardown API Snippets",
+    "icon": "image/logo.png",
     "publisher": "vulcan-dev",
     "description": "TeardownAPI VSCode Snippets",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.69.0"
     },
@@ -14,12 +15,18 @@
         "snippets": [
             {
                 "language": "lua",
-                "path": "./api.code-snippets"
+                "path": "../api.code-snippets"
             }
         ]
     },
     "repository": {
         "type": "git",
         "url": "https://github.com/vulcan-dev/teardown-api"
+    },
+    "readme": "../README.md",
+    "license": "MIT",
+    "author": {
+        "name": "Daniel W",
+        "url": "https://github.com/vulcan-dev"
     }
 }
