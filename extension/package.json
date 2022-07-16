@@ -15,7 +15,7 @@
         "snippets": [
             {
                 "language": "lua",
-                "path": "../api.code-snippets"
+                "path": "./api.code-snippets"
             }
         ]
     },
