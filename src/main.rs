@@ -55,7 +55,6 @@ fn get_body(function: &Function) -> String {
         body.push_str(&format!("\"{}(", function.name));
 
         let mut i = 0;
-        let len = input.len();
         for param in input {
             let mut name = param.name.clone();
             let type_ = param.type_.clone();
@@ -67,22 +66,10 @@ fn get_body(function: &Function) -> String {
 
             match type_.as_str() {
                 "string" => {
-                    if i == 0 {
-                        body.push_str(format!("\\\"${{1:{}}}\\\"", name).as_str());
-                    } else if i == len-1 {
-                        body.push_str(format!("\\\"${{0:{}}}\\\"", name).as_str());
-                    } else {
-                        body.push_str(format!("\\\"${{{}:{}}}\\\"", i+1, name).as_str());
-                    }
+                    body.push_str(format!("\\\"${{{}:{}}}\\\"", i+1, name).as_str());
                 },
                 _ => {
-                    if i == 0 {
-                        body.push_str(format!("${{1:{}}}", name).as_str())
-                    } if i == len-1 {
-                        body.push_str(format!("${{0:{}}}", name).as_str())
-                    } else {
-                        body.push_str(format!("${{{}:{}}}", i+1, name).as_str())
-                    }
+                    body.push_str(format!("${{{}:{}}}", i+1, name).as_str())
                 }
             }
             
@@ -103,12 +90,13 @@ fn get_body(function: &Function) -> String {
 
 fn gen_desc(function: &Function) -> String {
     let mut desc = String::from("Arguments\\n");
+    
     if let Some(input) = &function.input {
         for param in input {
             if param.optional {
-                desc.push_str(&format!("{} ({}, optional)\\n", param.type_, param.name));
+                desc.push_str(&format!("{} ({}, optional) - {}\\n", param.type_, param.name, param.desc));
             } else {
-                desc.push_str(&format!("{} ({})\\n", param.type_, param.name));
+                desc.push_str(&format!("{} ({}) - {}\\n", param.type_, param.name, param.desc));
             }
         }
     } else {
@@ -118,7 +106,7 @@ fn gen_desc(function: &Function) -> String {
     desc.push_str("\\nReturns\\n");
     if let Some(output) = &function.output {
         for param in output {
-            desc.push_str(&format!("{} {}\\n", param.type_, param.name));
+            desc.push_str(&format!("{} {} - {}\\n", param.type_, param.name, param.desc));
         }
     } else {
         desc.push_str("None");
