@@ -4,7 +4,7 @@
     "icon": "image/logo.png",
     "publisher": "vulcan-dev",
     "description": "TeardownAPI VSCode Snippets",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "engines": {
         "vscode": "^1.69.0"
     },
@@ -15,7 +15,7 @@
         "snippets": [
             {
                 "language": "lua",
-                "path": "./api.code-snippets"
+                "path": "../api.code-snippets"
             }
         ]
     },
