@@ -9,3 +9,6 @@ Initial Release
 
 ## Version 0.0.3
 - Fixed README.md
+
+## Version 0.0.4
+- Fixed path to snippet
