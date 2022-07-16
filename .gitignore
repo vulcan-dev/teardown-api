@@ -3,3 +3,4 @@
 /extension/packaged
 *.lock
 *.code-snippets
+*.sublime-completions

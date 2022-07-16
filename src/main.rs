@@ -1,4 +1,4 @@
-use std::{fs::File, io::Write};
+use std::{fs::File, io::Write, env};
 
 use reqwest;
 use quick_xml;
@@ -107,15 +107,11 @@ fn gen_desc(function: &Function) -> String {
     desc
 }
 
-#[tokio::main]
-async fn main() {
-    let content = get_xml().await;
-    let api: API = quick_xml::de::from_str(&content).unwrap_or_else(|e| panic!("{}", e));
-
+fn gen_vscode(api: &API) {
     let mut contents = Vec::new();
     contents.push(String::from("{\n"));
 
-    for function in api.function {
+    for function in &api.function {
         let mut body: Vec<String> = Vec::new();
         body.push(get_body(&function));
 
@@ -139,6 +135,62 @@ async fn main() {
         out_str.push_str(&line);
     }
     
-    let mut file = File::create("api.code-snippets").unwrap();
+    let mut file = File::create("Teardown.code-snippets").unwrap();
     file.write_all(out_str.as_bytes()).unwrap();
+}
+
+fn gen_subl(api: API) {
+    let mut contents = String::from("{\n");
+
+    contents.push_str("\t\"scope\": \"source.lua\",\n");
+    contents.push_str("\t\"completions\": [\n\t\t\"lua\",\n");
+
+
+    for function in api.function {
+        let mut body = String::from(format!("{}(", function.name));
+
+        if let Some(input) = &function.input {
+            let mut i = 0;
+            for param in input {
+                body.push_str(&format!("${{{}:{}}}, ", i+1, param.name));
+                i += 1;
+            }
+            body.pop();
+            body.pop();
+            body.push_str(")");
+        } else {
+            body.push_str(&format!("{}()", function.name));
+        }
+
+        contents.push_str(&format!("\t\t{{\"trigger\": \"{}\", \"contents\": \"{}\"}},\n", function.name, body));
+    }
+
+    contents.pop();
+    contents.pop();
+    contents.push_str("\t]\n}");
+
+    let mut file = File::create("Teardown.sublime-completions").unwrap();
+    file.write_all(contents.as_bytes()).unwrap();
+}
+
+#[tokio::main]
+async fn main() {
+    let args: Vec<String> = env::args().collect();
+    if args.len() == 1 {
+        println!("Usage: [-subl | -vscode]");
+        return;
+    }
+
+    let content = get_xml().await;
+    let api: API = quick_xml::de::from_str(&content).unwrap_or_else(|e| panic!("{}", e));
+
+    if args[1] == "-vscode" {
+        println!("Generating vscode snippets");
+        gen_vscode(&api);
+    } else if args[1] == "-subl" {
+        println!("Generating subl snippets");
+        gen_subl(api);
+    } else {
+        println!("Usage: [-subl | -vscode]");
+    }
 }
