@@ -1,0 +1,25 @@
+{
+    "name": "teardown-api",
+    "displayName": "teardown-api",
+    "publisher": "vulcan-dev",
+    "description": "TeardownAPI VSCode Snippets",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.69.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "lua",
+                "path": "./api.code-snippets"
+            }
+        ]
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vulcan-dev/teardown-api"
+    }
+}

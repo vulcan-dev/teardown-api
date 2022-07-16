@@ -1,0 +1,3 @@
+/teardown-api/target
+*.lock
+*.code-snippets
