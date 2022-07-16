@@ -1,3 +1,4 @@
 /teardown-api/target
+/testing
 *.lock
 *.code-snippets
