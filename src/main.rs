@@ -21,14 +21,6 @@ struct Output {
     desc: String,
 }
 
-/* Example function
-<function name="GetBoolParam">
-    <input name="name" type="string" optional="false" desc="Parameter name"/>
-    <input name="default" type="boolean" optional="false" desc="Default parameter value"/>
-    <output name="value" type="boolean" desc="Parameter value"/>
-</function>
-*/
-
 #[derive(Debug, Deserialize)]
 struct Function {
     name: String,
@@ -126,7 +118,6 @@ async fn main() {
     for function in api.function {
         let mut body: Vec<String> = Vec::new();
         body.push(get_body(&function));
-        // body.push(format!("\"{}(\\\"$1\\\")\"", function.name));
 
         contents.push(format!("\t\"{}\": {{\n", function.name));
         contents.push(String::from("\t\t\"scope\": \"lua\",\n"));
