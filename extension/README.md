@@ -1,0 +1,8 @@
+# Teardown API Snippets
+
+## Version 0.0.1
+Initial Release
+
+## Version 0.0.2
+- Change Display Name
+- Add Icon
