@@ -76,11 +76,16 @@ td {
     padding: 0.5em;
     border-bottom: 1px solid #fff;
 }
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
 </style>
     ");
 
     for function in &api.function {
-        contents.push_str("<div class=\"func\">");
+        contents.push_str(&format!("<a href=\"https://teardowngame.com/modding/api.html#{}\" target=\"_blank\"<div class=\"func\">", function.name));
         contents.push_str(&format!("<h1>{}</h1>", function.name));
         if let Some(input) = &function.input {
             contents.push_str("<h2>Input</h2>");
@@ -133,7 +138,7 @@ td {
             }
             contents.push_str("</table>");
         }
-        contents.push_str("</div>");
+        contents.push_str("</a></div>");
     }
 
     contents.push_str("</body>");

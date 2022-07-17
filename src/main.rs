@@ -36,7 +36,6 @@ async fn main() {
     functions.insert("plain", plain::gen);
 
     let avail_generators = "vscode | sublime | atom | json | toml | yaml | md | csv | html | plain";
-    // todo generators: pdf
 
     let args: Vec<String> = env::args().collect();
     if args.len() == 1 {
