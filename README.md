@@ -1,12 +1,13 @@
 # Teardown API Snippets
 ## Usage
 ```
-./teardown-api.exe [-vscode] [-subl]
+./teardown-api.exe [-vscode] [-subl] [-atom]
 ```
 
 ## Installation
 - VSCode: Search it in the extensions list.
 - Sublime: Copy "**Teardown.sublime-completions**" to "**C:\Program Files\Sublime Text\Packages\User\\**" (or wherever your installation is).
+- Atom: Edit "**snippets.cson**" (**%USERPROFILE%\.atom**) and paste the content from "**Teardown.completions.cson**".
 
 ## Version 0.0.1
 Initial Release

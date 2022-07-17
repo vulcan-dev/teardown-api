@@ -64,7 +64,7 @@ fn get_body(function: &Function) -> String {
                     body.push_str(format!("${{{}:{}}}", i+1, name).as_str())
                 }
             }
-            
+
             i += 1;
 
             body.push_str(", ");
@@ -82,7 +82,7 @@ fn get_body(function: &Function) -> String {
 
 fn gen_desc(function: &Function) -> String {
     let mut desc = String::from("Arguments\\n");
-    
+
     if let Some(input) = &function.input {
         for param in input {
             if param.optional {
@@ -125,7 +125,7 @@ fn gen_vscode(api: &API) {
         contents.push(String::from("\n\t\t],\n"));
 
         contents.push(format!("\t\t\"description\": \"{}\"\n", gen_desc(&function)));
-        
+
         contents.push(String::from("\t},\n"));
     }
     contents.push(String::from("\n}"));
@@ -134,7 +134,7 @@ fn gen_vscode(api: &API) {
     for line in contents {
         out_str.push_str(&line);
     }
-    
+
     let mut file = File::create("Teardown.code-snippets").unwrap();
     file.write_all(out_str.as_bytes()).unwrap();
 }
@@ -173,11 +173,42 @@ fn gen_subl(api: API) {
     file.write_all(contents.as_bytes()).unwrap();
 }
 
+fn gen_atom(api: API) {
+    let mut contents = String::from("'.source.lua':\n");
+    for function in api.function {
+        let mut body = String::from(format!("{}(", function.name));
+
+        if let Some(input) = &function.input {
+            let mut i = 0;
+            for param in input {
+                if param.type_ == "string" {
+                    body.push_str(&format!("\"${{{}:{}}}\", ", i+1, param.name));
+                } else {
+                    body.push_str(&format!("${{{}:{}}}, ", i+1, param.name));
+                }
+                i += 1;
+            }
+            body.pop();
+            body.pop();
+            body.push_str(")");
+        } else {
+            body.push_str(")");
+        }
+
+        contents.push_str(&format!("  '{}':\n", function.name));
+        contents.push_str(&format!("    'prefix': '{}',\n", function.name));
+        contents.push_str(&format!("    'body': '{}'\n", body));
+    }
+
+    let mut file = File::create("Teardown.completions.cson").unwrap();
+    file.write_all(contents.as_bytes()).unwrap();
+}
+
 #[tokio::main]
 async fn main() {
     let args: Vec<String> = env::args().collect();
     if args.len() == 1 {
-        println!("Usage: [-subl | -vscode]");
+        println!("Usage: [-subl | -vscode | -atom]");
         return;
     }
 
@@ -190,7 +221,10 @@ async fn main() {
     } else if args[1] == "-subl" {
         println!("Generating subl snippets");
         gen_subl(api);
+    } else if args[1] == "-atom" {
+        println!("Generating atom snippets");
+        gen_atom(api);
     } else {
-        println!("Usage: [-subl | -vscode]");
+        println!("Usage: [-subl | -vscode | -atom]");
     }
 }

@@ -1,0 +1,910 @@
+'.source.lua':
+  'GetIntParam':
+    'prefix': 'GetIntParam',
+    'body': 'GetIntParam("${1:name}", ${2:default})'
+  'GetFloatParam':
+    'prefix': 'GetFloatParam',
+    'body': 'GetFloatParam("${1:name}", ${2:default})'
+  'GetBoolParam':
+    'prefix': 'GetBoolParam',
+    'body': 'GetBoolParam("${1:name}", ${2:default})'
+  'GetStringParam':
+    'prefix': 'GetStringParam',
+    'body': 'GetStringParam("${1:name}", "${2:default}")'
+  'GetVersion':
+    'prefix': 'GetVersion',
+    'body': 'GetVersion()'
+  'HasVersion':
+    'prefix': 'HasVersion',
+    'body': 'HasVersion("${1:version}")'
+  'GetTime':
+    'prefix': 'GetTime',
+    'body': 'GetTime()'
+  'GetTimeStep':
+    'prefix': 'GetTimeStep',
+    'body': 'GetTimeStep()'
+  'InputLastPressedKey':
+    'prefix': 'InputLastPressedKey',
+    'body': 'InputLastPressedKey()'
+  'InputPressed':
+    'prefix': 'InputPressed',
+    'body': 'InputPressed("${1:input}")'
+  'InputReleased':
+    'prefix': 'InputReleased',
+    'body': 'InputReleased("${1:input}")'
+  'InputDown':
+    'prefix': 'InputDown',
+    'body': 'InputDown("${1:input}")'
+  'InputValue':
+    'prefix': 'InputValue',
+    'body': 'InputValue("${1:input}")'
+  'SetValue':
+    'prefix': 'SetValue',
+    'body': 'SetValue("${1:variable}", ${2:value}, "${3:transition}", ${4:time})'
+  'PauseMenuButton':
+    'prefix': 'PauseMenuButton',
+    'body': 'PauseMenuButton("${1:title}")'
+  'StartLevel':
+    'prefix': 'StartLevel',
+    'body': 'StartLevel("${1:mission}", "${2:path}", "${3:layers}", ${4:passThrough})'
+  'SetPaused':
+    'prefix': 'SetPaused',
+    'body': 'SetPaused(${1:paused})'
+  'Restart':
+    'prefix': 'Restart',
+    'body': 'Restart()'
+  'Menu':
+    'prefix': 'Menu',
+    'body': 'Menu()'
+  'ClearKey':
+    'prefix': 'ClearKey',
+    'body': 'ClearKey("${1:key}")'
+  'ListKeys':
+    'prefix': 'ListKeys',
+    'body': 'ListKeys("${1:parent}")'
+  'HasKey':
+    'prefix': 'HasKey',
+    'body': 'HasKey("${1:key}")'
+  'SetInt':
+    'prefix': 'SetInt',
+    'body': 'SetInt("${1:key}", ${2:value})'
+  'GetInt':
+    'prefix': 'GetInt',
+    'body': 'GetInt("${1:key}")'
+  'SetFloat':
+    'prefix': 'SetFloat',
+    'body': 'SetFloat("${1:key}", ${2:value})'
+  'GetFloat':
+    'prefix': 'GetFloat',
+    'body': 'GetFloat("${1:key}")'
+  'SetBool':
+    'prefix': 'SetBool',
+    'body': 'SetBool("${1:key}", ${2:value})'
+  'GetBool':
+    'prefix': 'GetBool',
+    'body': 'GetBool("${1:key}")'
+  'SetString':
+    'prefix': 'SetString',
+    'body': 'SetString("${1:key}", "${2:value}")'
+  'GetString':
+    'prefix': 'GetString',
+    'body': 'GetString("${1:key}")'
+  'Vec':
+    'prefix': 'Vec',
+    'body': 'Vec(${1:x}, ${2:y}, ${3:z})'
+  'VecCopy':
+    'prefix': 'VecCopy',
+    'body': 'VecCopy(${1:org})'
+  'VecLength':
+    'prefix': 'VecLength',
+    'body': 'VecLength(${1:vec})'
+  'VecNormalize':
+    'prefix': 'VecNormalize',
+    'body': 'VecNormalize(${1:vec})'
+  'VecScale':
+    'prefix': 'VecScale',
+    'body': 'VecScale(${1:vec}, ${2:scale})'
+  'VecAdd':
+    'prefix': 'VecAdd',
+    'body': 'VecAdd(${1:a}, ${2:b})'
+  'VecSub':
+    'prefix': 'VecSub',
+    'body': 'VecSub(${1:a}, ${2:b})'
+  'VecDot':
+    'prefix': 'VecDot',
+    'body': 'VecDot(${1:a}, ${2:b})'
+  'VecCross':
+    'prefix': 'VecCross',
+    'body': 'VecCross(${1:a}, ${2:b})'
+  'VecLerp':
+    'prefix': 'VecLerp',
+    'body': 'VecLerp(${1:a}, ${2:b}, ${3:t})'
+  'Quat':
+    'prefix': 'Quat',
+    'body': 'Quat(${1:x}, ${2:y}, ${3:z}, ${4:w})'
+  'QuatCopy':
+    'prefix': 'QuatCopy',
+    'body': 'QuatCopy(${1:org})'
+  'QuatAxisAngle':
+    'prefix': 'QuatAxisAngle',
+    'body': 'QuatAxisAngle(${1:axis}, ${2:angle})'
+  'QuatEuler':
+    'prefix': 'QuatEuler',
+    'body': 'QuatEuler(${1:x}, ${2:y}, ${3:z})'
+  'GetQuatEuler':
+    'prefix': 'GetQuatEuler',
+    'body': 'GetQuatEuler(${1:quat})'
+  'QuatLookAt':
+    'prefix': 'QuatLookAt',
+    'body': 'QuatLookAt(${1:eye}, ${2:target})'
+  'QuatSlerp':
+    'prefix': 'QuatSlerp',
+    'body': 'QuatSlerp(${1:a}, ${2:b}, ${3:t})'
+  'QuatRotateQuat':
+    'prefix': 'QuatRotateQuat',
+    'body': 'QuatRotateQuat(${1:a}, ${2:b})'
+  'QuatRotateVec':
+    'prefix': 'QuatRotateVec',
+    'body': 'QuatRotateVec(${1:a}, ${2:vec})'
+  'Transform':
+    'prefix': 'Transform',
+    'body': 'Transform(${1:pos}, ${2:rot})'
+  'TransformCopy':
+    'prefix': 'TransformCopy',
+    'body': 'TransformCopy(${1:org})'
+  'TransformToParentTransform':
+    'prefix': 'TransformToParentTransform',
+    'body': 'TransformToParentTransform(${1:parent}, ${2:child})'
+  'TransformToLocalTransform':
+    'prefix': 'TransformToLocalTransform',
+    'body': 'TransformToLocalTransform(${1:parent}, ${2:child})'
+  'TransformToParentVec':
+    'prefix': 'TransformToParentVec',
+    'body': 'TransformToParentVec(${1:t}, ${2:v})'
+  'TransformToLocalVec':
+    'prefix': 'TransformToLocalVec',
+    'body': 'TransformToLocalVec(${1:t}, ${2:v})'
+  'TransformToParentPoint':
+    'prefix': 'TransformToParentPoint',
+    'body': 'TransformToParentPoint(${1:t}, ${2:p})'
+  'TransformToLocalPoint':
+    'prefix': 'TransformToLocalPoint',
+    'body': 'TransformToLocalPoint(${1:t}, ${2:p})'
+  'SetTag':
+    'prefix': 'SetTag',
+    'body': 'SetTag(${1:handle}, "${2:tag}", "${3:value}")'
+  'RemoveTag':
+    'prefix': 'RemoveTag',
+    'body': 'RemoveTag(${1:handle}, "${2:tag}")'
+  'HasTag':
+    'prefix': 'HasTag',
+    'body': 'HasTag(${1:handle}, "${2:tag}")'
+  'GetTagValue':
+    'prefix': 'GetTagValue',
+    'body': 'GetTagValue(${1:handle}, "${2:tag}")'
+  'GetDescription':
+    'prefix': 'GetDescription',
+    'body': 'GetDescription(${1:handle})'
+  'SetDescription':
+    'prefix': 'SetDescription',
+    'body': 'SetDescription(${1:handle}, "${2:description}")'
+  'Delete':
+    'prefix': 'Delete',
+    'body': 'Delete(${1:handle})'
+  'IsHandleValid':
+    'prefix': 'IsHandleValid',
+    'body': 'IsHandleValid(${1:handle})'
+  'GetEntityType':
+    'prefix': 'GetEntityType',
+    'body': 'GetEntityType(${1:handle})'
+  'FindBody':
+    'prefix': 'FindBody',
+    'body': 'FindBody("${1:tag}", ${2:global})'
+  'FindBodies':
+    'prefix': 'FindBodies',
+    'body': 'FindBodies("${1:tag}", ${2:global})'
+  'GetBodyTransform':
+    'prefix': 'GetBodyTransform',
+    'body': 'GetBodyTransform(${1:handle})'
+  'SetBodyTransform':
+    'prefix': 'SetBodyTransform',
+    'body': 'SetBodyTransform(${1:handle}, ${2:transform})'
+  'GetBodyMass':
+    'prefix': 'GetBodyMass',
+    'body': 'GetBodyMass(${1:handle})'
+  'IsBodyDynamic':
+    'prefix': 'IsBodyDynamic',
+    'body': 'IsBodyDynamic(${1:handle})'
+  'SetBodyDynamic':
+    'prefix': 'SetBodyDynamic',
+    'body': 'SetBodyDynamic(${1:handle}, ${2:dynamic})'
+  'SetBodyVelocity':
+    'prefix': 'SetBodyVelocity',
+    'body': 'SetBodyVelocity(${1:handle}, ${2:velocity})'
+  'GetBodyVelocity':
+    'prefix': 'GetBodyVelocity',
+    'body': 'GetBodyVelocity(${1:handle})'
+  'GetBodyVelocityAtPos':
+    'prefix': 'GetBodyVelocityAtPos',
+    'body': 'GetBodyVelocityAtPos(${1:handle}, ${2:pos})'
+  'SetBodyAngularVelocity':
+    'prefix': 'SetBodyAngularVelocity',
+    'body': 'SetBodyAngularVelocity(${1:handle}, ${2:angVel})'
+  'GetBodyAngularVelocity':
+    'prefix': 'GetBodyAngularVelocity',
+    'body': 'GetBodyAngularVelocity(${1:handle})'
+  'IsBodyActive':
+    'prefix': 'IsBodyActive',
+    'body': 'IsBodyActive(${1:handle})'
+  'SetBodyActive':
+    'prefix': 'SetBodyActive',
+    'body': 'SetBodyActive(${1:handle}, ${2:active})'
+  'ApplyBodyImpulse':
+    'prefix': 'ApplyBodyImpulse',
+    'body': 'ApplyBodyImpulse(${1:handle}, ${2:position}, ${3:impulse})'
+  'GetBodyShapes':
+    'prefix': 'GetBodyShapes',
+    'body': 'GetBodyShapes(${1:handle})'
+  'GetBodyVehicle':
+    'prefix': 'GetBodyVehicle',
+    'body': 'GetBodyVehicle(${1:body})'
+  'GetBodyBounds':
+    'prefix': 'GetBodyBounds',
+    'body': 'GetBodyBounds(${1:handle})'
+  'GetBodyCenterOfMass':
+    'prefix': 'GetBodyCenterOfMass',
+    'body': 'GetBodyCenterOfMass(${1:handle})'
+  'IsBodyVisible':
+    'prefix': 'IsBodyVisible',
+    'body': 'IsBodyVisible(${1:handle}, ${2:maxDist}, ${3:rejectTransparent})'
+  'IsBodyBroken':
+    'prefix': 'IsBodyBroken',
+    'body': 'IsBodyBroken(${1:handle})'
+  'IsBodyJointedToStatic':
+    'prefix': 'IsBodyJointedToStatic',
+    'body': 'IsBodyJointedToStatic(${1:handle})'
+  'DrawBodyOutline':
+    'prefix': 'DrawBodyOutline',
+    'body': 'DrawBodyOutline(${1:handle}, ${2:r}, ${3:g}, ${4:b}, ${5:a})'
+  'DrawBodyHighlight':
+    'prefix': 'DrawBodyHighlight',
+    'body': 'DrawBodyHighlight(${1:handle}, ${2:amount})'
+  'GetBodyClosestPoint':
+    'prefix': 'GetBodyClosestPoint',
+    'body': 'GetBodyClosestPoint(${1:body}, ${2:origin})'
+  'ConstrainVelocity':
+    'prefix': 'ConstrainVelocity',
+    'body': 'ConstrainVelocity(${1:bodyA}, ${2:bodyB}, ${3:point}, ${4:dir}, ${5:relVel}, ${6:min}, ${7:max})'
+  'ConstrainAngularVelocity':
+    'prefix': 'ConstrainAngularVelocity',
+    'body': 'ConstrainAngularVelocity(${1:bodyA}, ${2:bodyB}, ${3:dir}, ${4:relAngVel}, ${5:min}, ${6:max})'
+  'ConstrainPosition':
+    'prefix': 'ConstrainPosition',
+    'body': 'ConstrainPosition(${1:bodyA}, ${2:bodyB}, ${3:pointA}, ${4:pointB}, ${5:maxVel}, ${6:maxImpulse})'
+  'ConstrainOrientation':
+    'prefix': 'ConstrainOrientation',
+    'body': 'ConstrainOrientation(${1:bodyA}, ${2:bodyB}, ${3:quatA}, ${4:quatB}, ${5:maxAngVel}, ${6:maxAngImpulse})'
+  'GetWorldBody':
+    'prefix': 'GetWorldBody',
+    'body': 'GetWorldBody()'
+  'FindShape':
+    'prefix': 'FindShape',
+    'body': 'FindShape("${1:tag}", ${2:global})'
+  'FindShapes':
+    'prefix': 'FindShapes',
+    'body': 'FindShapes("${1:tag}", ${2:global})'
+  'GetShapeLocalTransform':
+    'prefix': 'GetShapeLocalTransform',
+    'body': 'GetShapeLocalTransform(${1:handle})'
+  'SetShapeLocalTransform':
+    'prefix': 'SetShapeLocalTransform',
+    'body': 'SetShapeLocalTransform(${1:handle}, ${2:transform})'
+  'GetShapeWorldTransform':
+    'prefix': 'GetShapeWorldTransform',
+    'body': 'GetShapeWorldTransform(${1:handle})'
+  'GetShapeBody':
+    'prefix': 'GetShapeBody',
+    'body': 'GetShapeBody(${1:handle})'
+  'GetShapeJoints':
+    'prefix': 'GetShapeJoints',
+    'body': 'GetShapeJoints(${1:shape})'
+  'GetShapeLights':
+    'prefix': 'GetShapeLights',
+    'body': 'GetShapeLights(${1:shape})'
+  'GetShapeBounds':
+    'prefix': 'GetShapeBounds',
+    'body': 'GetShapeBounds(${1:handle})'
+  'SetShapeEmissiveScale':
+    'prefix': 'SetShapeEmissiveScale',
+    'body': 'SetShapeEmissiveScale(${1:handle}, ${2:scale})'
+  'GetShapeMaterialAtPosition':
+    'prefix': 'GetShapeMaterialAtPosition',
+    'body': 'GetShapeMaterialAtPosition(${1:handle}, ${2:pos})'
+  'GetShapeMaterialAtIndex':
+    'prefix': 'GetShapeMaterialAtIndex',
+    'body': 'GetShapeMaterialAtIndex(${1:handle}, ${2:x}, ${3:y}, ${4:z})'
+  'GetShapeSize':
+    'prefix': 'GetShapeSize',
+    'body': 'GetShapeSize(${1:handle})'
+  'GetShapeVoxelCount':
+    'prefix': 'GetShapeVoxelCount',
+    'body': 'GetShapeVoxelCount(${1:handle})'
+  'IsShapeVisible':
+    'prefix': 'IsShapeVisible',
+    'body': 'IsShapeVisible(${1:handle}, ${2:maxDist}, ${3:rejectTransparent})'
+  'IsShapeBroken':
+    'prefix': 'IsShapeBroken',
+    'body': 'IsShapeBroken(${1:handle})'
+  'DrawShapeOutline':
+    'prefix': 'DrawShapeOutline',
+    'body': 'DrawShapeOutline(${1:handle}, ${2:r}, ${3:g}, ${4:b}, ${5:a})'
+  'DrawShapeHighlight':
+    'prefix': 'DrawShapeHighlight',
+    'body': 'DrawShapeHighlight(${1:handle}, ${2:amount})'
+  'SetShapeCollisionFilter':
+    'prefix': 'SetShapeCollisionFilter',
+    'body': 'SetShapeCollisionFilter(${1:handle}, ${2:layer}, ${3:mask})'
+  'GetShapeClosestPoint':
+    'prefix': 'GetShapeClosestPoint',
+    'body': 'GetShapeClosestPoint(${1:shape}, ${2:origin})'
+  'IsShapeTouching':
+    'prefix': 'IsShapeTouching',
+    'body': 'IsShapeTouching(${1:a}, ${2:b})'
+  'FindLocation':
+    'prefix': 'FindLocation',
+    'body': 'FindLocation("${1:tag}", ${2:global})'
+  'FindLocations':
+    'prefix': 'FindLocations',
+    'body': 'FindLocations("${1:tag}", ${2:global})'
+  'GetLocationTransform':
+    'prefix': 'GetLocationTransform',
+    'body': 'GetLocationTransform(${1:handle})'
+  'FindJoint':
+    'prefix': 'FindJoint',
+    'body': 'FindJoint("${1:tag}", ${2:global})'
+  'FindJoints':
+    'prefix': 'FindJoints',
+    'body': 'FindJoints("${1:tag}", ${2:global})'
+  'IsJointBroken':
+    'prefix': 'IsJointBroken',
+    'body': 'IsJointBroken(${1:joint})'
+  'GetJointType':
+    'prefix': 'GetJointType',
+    'body': 'GetJointType(${1:joint})'
+  'GetJointOtherShape':
+    'prefix': 'GetJointOtherShape',
+    'body': 'GetJointOtherShape(${1:joint}, ${2:shape})'
+  'SetJointMotor':
+    'prefix': 'SetJointMotor',
+    'body': 'SetJointMotor(${1:joint}, ${2:velocity}, ${3:strength})'
+  'SetJointMotorTarget':
+    'prefix': 'SetJointMotorTarget',
+    'body': 'SetJointMotorTarget(${1:joint}, ${2:target}, ${3:maxVel}, ${4:strength})'
+  'GetJointLimits':
+    'prefix': 'GetJointLimits',
+    'body': 'GetJointLimits(${1:joint})'
+  'GetJointMovement':
+    'prefix': 'GetJointMovement',
+    'body': 'GetJointMovement(${1:joint})'
+  'GetJointedBodies':
+    'prefix': 'GetJointedBodies',
+    'body': 'GetJointedBodies(${1:body})'
+  'DetachJointFromShape':
+    'prefix': 'DetachJointFromShape',
+    'body': 'DetachJointFromShape(${1:joint}, ${2:shape})'
+  'FindLight':
+    'prefix': 'FindLight',
+    'body': 'FindLight("${1:tag}", ${2:global})'
+  'FindLights':
+    'prefix': 'FindLights',
+    'body': 'FindLights("${1:tag}", ${2:global})'
+  'SetLightEnabled':
+    'prefix': 'SetLightEnabled',
+    'body': 'SetLightEnabled(${1:handle}, ${2:enabled})'
+  'SetLightColor':
+    'prefix': 'SetLightColor',
+    'body': 'SetLightColor(${1:handle}, ${2:r}, ${3:g}, ${4:b})'
+  'SetLightIntensity':
+    'prefix': 'SetLightIntensity',
+    'body': 'SetLightIntensity(${1:handle}, ${2:intensity})'
+  'GetLightTransform':
+    'prefix': 'GetLightTransform',
+    'body': 'GetLightTransform(${1:handle})'
+  'GetLightShape':
+    'prefix': 'GetLightShape',
+    'body': 'GetLightShape(${1:handle})'
+  'IsLightActive':
+    'prefix': 'IsLightActive',
+    'body': 'IsLightActive(${1:handle})'
+  'IsPointAffectedByLight':
+    'prefix': 'IsPointAffectedByLight',
+    'body': 'IsPointAffectedByLight(${1:handle}, ${2:point})'
+  'FindTrigger':
+    'prefix': 'FindTrigger',
+    'body': 'FindTrigger("${1:tag}", ${2:global})'
+  'FindTriggers':
+    'prefix': 'FindTriggers',
+    'body': 'FindTriggers("${1:tag}", ${2:global})'
+  'GetTriggerTransform':
+    'prefix': 'GetTriggerTransform',
+    'body': 'GetTriggerTransform(${1:handle})'
+  'SetTriggerTransform':
+    'prefix': 'SetTriggerTransform',
+    'body': 'SetTriggerTransform(${1:handle}, ${2:transform})'
+  'GetTriggerBounds':
+    'prefix': 'GetTriggerBounds',
+    'body': 'GetTriggerBounds(${1:handle})'
+  'IsBodyInTrigger':
+    'prefix': 'IsBodyInTrigger',
+    'body': 'IsBodyInTrigger(${1:trigger}, ${2:body})'
+  'IsVehicleInTrigger':
+    'prefix': 'IsVehicleInTrigger',
+    'body': 'IsVehicleInTrigger(${1:trigger}, ${2:vehicle})'
+  'IsShapeInTrigger':
+    'prefix': 'IsShapeInTrigger',
+    'body': 'IsShapeInTrigger(${1:trigger}, ${2:shape})'
+  'IsPointInTrigger':
+    'prefix': 'IsPointInTrigger',
+    'body': 'IsPointInTrigger(${1:trigger}, ${2:point})'
+  'IsTriggerEmpty':
+    'prefix': 'IsTriggerEmpty',
+    'body': 'IsTriggerEmpty(${1:handle}, ${2:demolision})'
+  'GetTriggerDistance':
+    'prefix': 'GetTriggerDistance',
+    'body': 'GetTriggerDistance(${1:trigger}, ${2:point})'
+  'GetTriggerClosestPoint':
+    'prefix': 'GetTriggerClosestPoint',
+    'body': 'GetTriggerClosestPoint(${1:trigger}, ${2:point})'
+  'FindScreen':
+    'prefix': 'FindScreen',
+    'body': 'FindScreen("${1:tag}", ${2:global})'
+  'FindScreens':
+    'prefix': 'FindScreens',
+    'body': 'FindScreens("${1:tag}", ${2:global})'
+  'SetScreenEnabled':
+    'prefix': 'SetScreenEnabled',
+    'body': 'SetScreenEnabled(${1:screen}, ${2:enabled})'
+  'IsScreenEnabled':
+    'prefix': 'IsScreenEnabled',
+    'body': 'IsScreenEnabled(${1:screen})'
+  'GetScreenShape':
+    'prefix': 'GetScreenShape',
+    'body': 'GetScreenShape(${1:screen})'
+  'FindVehicle':
+    'prefix': 'FindVehicle',
+    'body': 'FindVehicle("${1:tag}", ${2:global})'
+  'FindVehicles':
+    'prefix': 'FindVehicles',
+    'body': 'FindVehicles("${1:tag}", ${2:global})'
+  'GetVehicleTransform':
+    'prefix': 'GetVehicleTransform',
+    'body': 'GetVehicleTransform(${1:vehicle})'
+  'GetVehicleBody':
+    'prefix': 'GetVehicleBody',
+    'body': 'GetVehicleBody(${1:vehicle})'
+  'GetVehicleHealth':
+    'prefix': 'GetVehicleHealth',
+    'body': 'GetVehicleHealth(${1:vehicle})'
+  'GetVehicleDriverPos':
+    'prefix': 'GetVehicleDriverPos',
+    'body': 'GetVehicleDriverPos(${1:vehicle})'
+  'DriveVehicle':
+    'prefix': 'DriveVehicle',
+    'body': 'DriveVehicle(${1:vehicle}, ${2:drive}, ${3:steering}, ${4:handbrake})'
+  'GetPlayerPos':
+    'prefix': 'GetPlayerPos',
+    'body': 'GetPlayerPos()'
+  'GetPlayerTransform':
+    'prefix': 'GetPlayerTransform',
+    'body': 'GetPlayerTransform(${1:includePitch})'
+  'SetPlayerTransform':
+    'prefix': 'SetPlayerTransform',
+    'body': 'SetPlayerTransform(${1:transform}, ${2:includePitch})'
+  'SetPlayerGroundVelocity':
+    'prefix': 'SetPlayerGroundVelocity',
+    'body': 'SetPlayerGroundVelocity(${1:vel})'
+  'GetPlayerCameraTransform':
+    'prefix': 'GetPlayerCameraTransform',
+    'body': 'GetPlayerCameraTransform()'
+  'SetPlayerSpawnTransform':
+    'prefix': 'SetPlayerSpawnTransform',
+    'body': 'SetPlayerSpawnTransform(${1:transform})'
+  'GetPlayerVelocity':
+    'prefix': 'GetPlayerVelocity',
+    'body': 'GetPlayerVelocity()'
+  'SetPlayerVehicle':
+    'prefix': 'SetPlayerVehicle',
+    'body': 'SetPlayerVehicle(${1:vehicle})'
+  'SetPlayerVelocity':
+    'prefix': 'SetPlayerVelocity',
+    'body': 'SetPlayerVelocity(${1:velocity})'
+  'GetPlayerVehicle':
+    'prefix': 'GetPlayerVehicle',
+    'body': 'GetPlayerVehicle()'
+  'GetPlayerGrabShape':
+    'prefix': 'GetPlayerGrabShape',
+    'body': 'GetPlayerGrabShape()'
+  'GetPlayerGrabBody':
+    'prefix': 'GetPlayerGrabBody',
+    'body': 'GetPlayerGrabBody()'
+  'ReleasePlayerGrab':
+    'prefix': 'ReleasePlayerGrab',
+    'body': 'ReleasePlayerGrab()'
+  'GetPlayerPickShape':
+    'prefix': 'GetPlayerPickShape',
+    'body': 'GetPlayerPickShape()'
+  'GetPlayerPickBody':
+    'prefix': 'GetPlayerPickBody',
+    'body': 'GetPlayerPickBody()'
+  'GetPlayerInteractShape':
+    'prefix': 'GetPlayerInteractShape',
+    'body': 'GetPlayerInteractShape()'
+  'GetPlayerInteractBody':
+    'prefix': 'GetPlayerInteractBody',
+    'body': 'GetPlayerInteractBody()'
+  'SetPlayerScreen':
+    'prefix': 'SetPlayerScreen',
+    'body': 'SetPlayerScreen(${1:handle})'
+  'GetPlayerScreen':
+    'prefix': 'GetPlayerScreen',
+    'body': 'GetPlayerScreen()'
+  'SetPlayerHealth':
+    'prefix': 'SetPlayerHealth',
+    'body': 'SetPlayerHealth(${1:health})'
+  'GetPlayerHealth':
+    'prefix': 'GetPlayerHealth',
+    'body': 'GetPlayerHealth()'
+  'RespawnPlayer':
+    'prefix': 'RespawnPlayer',
+    'body': 'RespawnPlayer()'
+  'RegisterTool':
+    'prefix': 'RegisterTool',
+    'body': 'RegisterTool("${1:id}", "${2:name}", "${3:file}", ${4:group})'
+  'GetToolBody':
+    'prefix': 'GetToolBody',
+    'body': 'GetToolBody()'
+  'SetToolTransform':
+    'prefix': 'SetToolTransform',
+    'body': 'SetToolTransform(${1:transform}, ${2:sway})'
+  'LoadSound':
+    'prefix': 'LoadSound',
+    'body': 'LoadSound("${1:path}", ${2:nominalDistance})'
+  'LoadLoop':
+    'prefix': 'LoadLoop',
+    'body': 'LoadLoop("${1:path}", ${2:nominalDistance})'
+  'PlaySound':
+    'prefix': 'PlaySound',
+    'body': 'PlaySound(${1:handle}, ${2:pos}, ${3:volume})'
+  'PlayLoop':
+    'prefix': 'PlayLoop',
+    'body': 'PlayLoop(${1:handle}, ${2:pos}, ${3:volume})'
+  'PlayMusic':
+    'prefix': 'PlayMusic',
+    'body': 'PlayMusic("${1:path}")'
+  'StopMusic':
+    'prefix': 'StopMusic',
+    'body': 'StopMusic()'
+  'LoadSprite':
+    'prefix': 'LoadSprite',
+    'body': 'LoadSprite("${1:path}")'
+  'DrawSprite':
+    'prefix': 'DrawSprite',
+    'body': 'DrawSprite(${1:handle}, ${2:transform}, ${3:width}, ${4:height}, ${5:r}, ${6:g}, ${7:b}, ${8:a}, ${9:depthTest}, ${10:additive})'
+  'QueryRequire':
+    'prefix': 'QueryRequire',
+    'body': 'QueryRequire("${1:layers}")'
+  'QueryRejectVehicle':
+    'prefix': 'QueryRejectVehicle',
+    'body': 'QueryRejectVehicle(${1:vehicle})'
+  'QueryRejectBody':
+    'prefix': 'QueryRejectBody',
+    'body': 'QueryRejectBody(${1:body})'
+  'QueryRejectShape':
+    'prefix': 'QueryRejectShape',
+    'body': 'QueryRejectShape(${1:shape})'
+  'QueryRaycast':
+    'prefix': 'QueryRaycast',
+    'body': 'QueryRaycast(${1:origin}, ${2:direction}, ${3:maxDist}, ${4:radius}, ${5:rejectTransparent})'
+  'QueryClosestPoint':
+    'prefix': 'QueryClosestPoint',
+    'body': 'QueryClosestPoint(${1:origin}, ${2:maxDist})'
+  'QueryAabbShapes':
+    'prefix': 'QueryAabbShapes',
+    'body': 'QueryAabbShapes(${1:min}, ${2:max})'
+  'QueryAabbBodies':
+    'prefix': 'QueryAabbBodies',
+    'body': 'QueryAabbBodies(${1:min}, ${2:max})'
+  'QueryPath':
+    'prefix': 'QueryPath',
+    'body': 'QueryPath(${1:start}, ${2:end}, ${3:maxDist}, ${4:targetRadius})'
+  'AbortPath':
+    'prefix': 'AbortPath',
+    'body': 'AbortPath()'
+  'GetPathState':
+    'prefix': 'GetPathState',
+    'body': 'GetPathState()'
+  'GetPathLength':
+    'prefix': 'GetPathLength',
+    'body': 'GetPathLength()'
+  'GetPathPoint':
+    'prefix': 'GetPathPoint',
+    'body': 'GetPathPoint(${1:dist})'
+  'GetLastSound':
+    'prefix': 'GetLastSound',
+    'body': 'GetLastSound()'
+  'IsPointInWater':
+    'prefix': 'IsPointInWater',
+    'body': 'IsPointInWater(${1:point})'
+  'GetWindVelocity':
+    'prefix': 'GetWindVelocity',
+    'body': 'GetWindVelocity(${1:point})'
+  'ParticleReset':
+    'prefix': 'ParticleReset',
+    'body': 'ParticleReset()'
+  'ParticleType':
+    'prefix': 'ParticleType',
+    'body': 'ParticleType("${1:type}")'
+  'ParticleTile':
+    'prefix': 'ParticleTile',
+    'body': 'ParticleTile(${1:type})'
+  'ParticleColor':
+    'prefix': 'ParticleColor',
+    'body': 'ParticleColor(${1:r0}, ${2:g0}, ${3:b0}, ${4:r1}, ${5:g1}, ${6:b1})'
+  'ParticleRadius':
+    'prefix': 'ParticleRadius',
+    'body': 'ParticleRadius(${1:r0}, ${2:r1}, "${3:interpolation}", ${4:fadein}, ${5:fadeout})'
+  'ParticleAlpha':
+    'prefix': 'ParticleAlpha',
+    'body': 'ParticleAlpha(${1:a0}, ${2:a1}, "${3:interpolation}", ${4:fadein}, ${5:fadeout})'
+  'ParticleGravity':
+    'prefix': 'ParticleGravity',
+    'body': 'ParticleGravity(${1:g0}, ${2:g1}, "${3:interpolation}", ${4:fadein}, ${5:fadeout})'
+  'ParticleDrag':
+    'prefix': 'ParticleDrag',
+    'body': 'ParticleDrag(${1:d0}, ${2:d1}, "${3:interpolation}", ${4:fadein}, ${5:fadeout})'
+  'ParticleEmissive':
+    'prefix': 'ParticleEmissive',
+    'body': 'ParticleEmissive(${1:d0}, ${2:d1}, "${3:interpolation}", ${4:fadein}, ${5:fadeout})'
+  'ParticleRotation':
+    'prefix': 'ParticleRotation',
+    'body': 'ParticleRotation(${1:r0}, ${2:r1}, "${3:interpolation}", ${4:fadein}, ${5:fadeout})'
+  'ParticleStretch':
+    'prefix': 'ParticleStretch',
+    'body': 'ParticleStretch(${1:s0}, ${2:s1}, "${3:interpolation}", ${4:fadein}, ${5:fadeout})'
+  'ParticleSticky':
+    'prefix': 'ParticleSticky',
+    'body': 'ParticleSticky(${1:s0}, ${2:s1}, "${3:interpolation}", ${4:fadein}, ${5:fadeout})'
+  'ParticleCollide':
+    'prefix': 'ParticleCollide',
+    'body': 'ParticleCollide(${1:c0}, ${2:c1}, "${3:interpolation}", ${4:fadein}, ${5:fadeout})'
+  'ParticleFlags':
+    'prefix': 'ParticleFlags',
+    'body': 'ParticleFlags(${1:bitmask})'
+  'SpawnParticle':
+    'prefix': 'SpawnParticle',
+    'body': 'SpawnParticle(${1:pos}, ${2:velocity}, ${3:lifetime})'
+  'Spawn':
+    'prefix': 'Spawn',
+    'body': 'Spawn("${1:xml}", ${2:transform}, ${3:allowStatic}, ${4:jointExisting})'
+  'Shoot':
+    'prefix': 'Shoot',
+    'body': 'Shoot(${1:origin}, ${2:direction}, "${3:type}", ${4:strength}, ${5:maxDist})'
+  'Paint':
+    'prefix': 'Paint',
+    'body': 'Paint(${1:origin}, ${2:radius}, "${3:type}", ${4:probability})'
+  'MakeHole':
+    'prefix': 'MakeHole',
+    'body': 'MakeHole(${1:position}, ${2:r0}, ${3:r1}, ${4:r2}, ${5:silent})'
+  'Explosion':
+    'prefix': 'Explosion',
+    'body': 'Explosion(${1:pos}, ${2:size})'
+  'SpawnFire':
+    'prefix': 'SpawnFire',
+    'body': 'SpawnFire(${1:pos})'
+  'GetFireCount':
+    'prefix': 'GetFireCount',
+    'body': 'GetFireCount()'
+  'QueryClosestFire':
+    'prefix': 'QueryClosestFire',
+    'body': 'QueryClosestFire(${1:origin}, ${2:maxDist})'
+  'QueryAabbFireCount':
+    'prefix': 'QueryAabbFireCount',
+    'body': 'QueryAabbFireCount(${1:min}, ${2:max})'
+  'RemoveAabbFires':
+    'prefix': 'RemoveAabbFires',
+    'body': 'RemoveAabbFires(${1:min}, ${2:max})'
+  'GetCameraTransform':
+    'prefix': 'GetCameraTransform',
+    'body': 'GetCameraTransform()'
+  'SetCameraTransform':
+    'prefix': 'SetCameraTransform',
+    'body': 'SetCameraTransform(${1:transform}, ${2:fov})'
+  'SetCameraFov':
+    'prefix': 'SetCameraFov',
+    'body': 'SetCameraFov(${1:degrees})'
+  'SetCameraDof':
+    'prefix': 'SetCameraDof',
+    'body': 'SetCameraDof(${1:distance}, ${2:amount})'
+  'PointLight':
+    'prefix': 'PointLight',
+    'body': 'PointLight(${1:pos}, ${2:r}, ${3:g}, ${4:b}, ${5:intensity})'
+  'SetTimeScale':
+    'prefix': 'SetTimeScale',
+    'body': 'SetTimeScale(${1:scale})'
+  'SetEnvironmentDefault':
+    'prefix': 'SetEnvironmentDefault',
+    'body': 'SetEnvironmentDefault()'
+  'SetEnvironmentProperty':
+    'prefix': 'SetEnvironmentProperty',
+    'body': 'SetEnvironmentProperty("${1:name}", ${2:value0}, ${3:value1}, ${4:value2}, ${5:value3})'
+  'GetEnvironmentProperty':
+    'prefix': 'GetEnvironmentProperty',
+    'body': 'GetEnvironmentProperty("${1:name}")'
+  'SetPostProcessingDefault':
+    'prefix': 'SetPostProcessingDefault',
+    'body': 'SetPostProcessingDefault()'
+  'SetPostProcessingProperty':
+    'prefix': 'SetPostProcessingProperty',
+    'body': 'SetPostProcessingProperty("${1:name}", ${2:value0}, ${3:value1}, ${4:value2})'
+  'GetPostProcessingProperty':
+    'prefix': 'GetPostProcessingProperty',
+    'body': 'GetPostProcessingProperty("${1:name}")'
+  'DrawLine':
+    'prefix': 'DrawLine',
+    'body': 'DrawLine(${1:p0}, ${2:p1}, ${3:r}, ${4:g}, ${5:b}, ${6:a})'
+  'DebugLine':
+    'prefix': 'DebugLine',
+    'body': 'DebugLine(${1:p0}, ${2:p1}, ${3:r}, ${4:g}, ${5:b}, ${6:a})'
+  'DebugCross':
+    'prefix': 'DebugCross',
+    'body': 'DebugCross(${1:p0}, ${2:r}, ${3:g}, ${4:b}, ${5:a})'
+  'DebugWatch':
+    'prefix': 'DebugWatch',
+    'body': 'DebugWatch("${1:name}", "${2:value}")'
+  'DebugPrint':
+    'prefix': 'DebugPrint',
+    'body': 'DebugPrint("${1:message}")'
+  'UiMakeInteractive':
+    'prefix': 'UiMakeInteractive',
+    'body': 'UiMakeInteractive()'
+  'UiPush':
+    'prefix': 'UiPush',
+    'body': 'UiPush()'
+  'UiPop':
+    'prefix': 'UiPop',
+    'body': 'UiPop()'
+  'UiWidth':
+    'prefix': 'UiWidth',
+    'body': 'UiWidth()'
+  'UiHeight':
+    'prefix': 'UiHeight',
+    'body': 'UiHeight()'
+  'UiCenter':
+    'prefix': 'UiCenter',
+    'body': 'UiCenter()'
+  'UiMiddle':
+    'prefix': 'UiMiddle',
+    'body': 'UiMiddle()'
+  'UiColor':
+    'prefix': 'UiColor',
+    'body': 'UiColor(${1:r}, ${2:g}, ${3:b}, ${4:a})'
+  'UiColorFilter':
+    'prefix': 'UiColorFilter',
+    'body': 'UiColorFilter(${1:r}, ${2:g}, ${3:b}, ${4:a})'
+  'UiTranslate':
+    'prefix': 'UiTranslate',
+    'body': 'UiTranslate(${1:x}, ${2:y})'
+  'UiRotate':
+    'prefix': 'UiRotate',
+    'body': 'UiRotate(${1:angle})'
+  'UiScale':
+    'prefix': 'UiScale',
+    'body': 'UiScale(${1:x}, ${2:y})'
+  'UiWindow':
+    'prefix': 'UiWindow',
+    'body': 'UiWindow(${1:width}, ${2:height}, ${3:clip}, ${4:inherit})'
+  'UiSafeMargins':
+    'prefix': 'UiSafeMargins',
+    'body': 'UiSafeMargins()'
+  'UiAlign':
+    'prefix': 'UiAlign',
+    'body': 'UiAlign("${1:alignment}")'
+  'UiModalBegin':
+    'prefix': 'UiModalBegin',
+    'body': 'UiModalBegin()'
+  'UiModalEnd':
+    'prefix': 'UiModalEnd',
+    'body': 'UiModalEnd()'
+  'UiDisableInput':
+    'prefix': 'UiDisableInput',
+    'body': 'UiDisableInput()'
+  'UiEnableInput':
+    'prefix': 'UiEnableInput',
+    'body': 'UiEnableInput()'
+  'UiReceivesInput':
+    'prefix': 'UiReceivesInput',
+    'body': 'UiReceivesInput()'
+  'UiGetMousePos':
+    'prefix': 'UiGetMousePos',
+    'body': 'UiGetMousePos()'
+  'UiIsMouseInRect':
+    'prefix': 'UiIsMouseInRect',
+    'body': 'UiIsMouseInRect(${1:w}, ${2:h})'
+  'UiWorldToPixel':
+    'prefix': 'UiWorldToPixel',
+    'body': 'UiWorldToPixel(${1:point})'
+  'UiPixelToWorld':
+    'prefix': 'UiPixelToWorld',
+    'body': 'UiPixelToWorld(${1:x}, ${2:y})'
+  'UiBlur':
+    'prefix': 'UiBlur',
+    'body': 'UiBlur(${1:amount})'
+  'UiFont':
+    'prefix': 'UiFont',
+    'body': 'UiFont("${1:path}", ${2:size})'
+  'UiFontHeight':
+    'prefix': 'UiFontHeight',
+    'body': 'UiFontHeight()'
+  'UiText':
+    'prefix': 'UiText',
+    'body': 'UiText("${1:text}", ${2:move})'
+  'UiGetTextSize':
+    'prefix': 'UiGetTextSize',
+    'body': 'UiGetTextSize("${1:text}")'
+  'UiWordWrap':
+    'prefix': 'UiWordWrap',
+    'body': 'UiWordWrap(${1:width})'
+  'UiTextOutline':
+    'prefix': 'UiTextOutline',
+    'body': 'UiTextOutline(${1:r}, ${2:g}, ${3:b}, ${4:a}, ${5:thickness})'
+  'UiTextShadow':
+    'prefix': 'UiTextShadow',
+    'body': 'UiTextShadow(${1:r}, ${2:g}, ${3:b}, ${4:a}, ${5:distance}, ${6:blur})'
+  'UiRect':
+    'prefix': 'UiRect',
+    'body': 'UiRect(${1:w}, ${2:h})'
+  'UiImage':
+    'prefix': 'UiImage',
+    'body': 'UiImage("${1:path}", ${2:x0}, ${3:y0}, ${4:x1}, ${5:y1})'
+  'UiGetImageSize':
+    'prefix': 'UiGetImageSize',
+    'body': 'UiGetImageSize("${1:path}")'
+  'UiImageBox':
+    'prefix': 'UiImageBox',
+    'body': 'UiImageBox("${1:path}", ${2:width}, ${3:height}, ${4:borderWidth}, ${5:borderHeight})'
+  'UiSound':
+    'prefix': 'UiSound',
+    'body': 'UiSound("${1:path}", ${2:volume}, ${3:pitch}, ${4:pan})'
+  'UiSoundLoop':
+    'prefix': 'UiSoundLoop',
+    'body': 'UiSoundLoop("${1:path}", ${2:volume})'
+  'UiMute':
+    'prefix': 'UiMute',
+    'body': 'UiMute(${1:amount}, ${2:music})'
+  'UiButtonImageBox':
+    'prefix': 'UiButtonImageBox',
+    'body': 'UiButtonImageBox("${1:path}", ${2:borderWidth}, ${3:borderHeight}, ${4:r}, ${5:g}, ${6:b}, ${7:a})'
+  'UiButtonHoverColor':
+    'prefix': 'UiButtonHoverColor',
+    'body': 'UiButtonHoverColor(${1:r}, ${2:g}, ${3:b}, ${4:a})'
+  'UiButtonPressColor':
+    'prefix': 'UiButtonPressColor',
+    'body': 'UiButtonPressColor(${1:r}, ${2:g}, ${3:b}, ${4:a})'
+  'UiButtonPressDist':
+    'prefix': 'UiButtonPressDist',
+    'body': 'UiButtonPressDist(${1:dist})'
+  'UiTextButton':
+    'prefix': 'UiTextButton',
+    'body': 'UiTextButton("${1:text}", ${2:w}, ${3:h})'
+  'UiImageButton':
+    'prefix': 'UiImageButton',
+    'body': 'UiImageButton(${1:path})'
+  'UiBlankButton':
+    'prefix': 'UiBlankButton',
+    'body': 'UiBlankButton(${1:w}, ${2:h})'
+  'UiSlider':
+    'prefix': 'UiSlider',
+    'body': 'UiSlider(${1:path}, "${2:axis}", ${3:current}, ${4:min}, ${5:max})'
+  'UiGetScreen':
+    'prefix': 'UiGetScreen',
+    'body': 'UiGetScreen()'
