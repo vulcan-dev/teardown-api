@@ -6,6 +6,7 @@ mod md;
 mod csv;
 mod toml;
 mod yaml;
+mod html;
 
 use std::{env, collections::HashMap};
 
@@ -30,9 +31,10 @@ async fn main() {
     functions.insert("csv", csv::gen);
     functions.insert("toml", toml::gen);
     functions.insert("yaml", yaml::gen);
+    functions.insert("html", html::gen);
 
-    let avail_generators = "vscode | sublime | atom | json | toml | yaml | md | csv";
-    // todo generators: html, pdf and plain
+    let avail_generators = "vscode | sublime | atom | json | toml | yaml | md | csv | html";
+    // todo generators: pdf and plain
 
     let args: Vec<String> = env::args().collect();
     if args.len() == 1 {
