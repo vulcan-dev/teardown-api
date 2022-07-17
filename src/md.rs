@@ -2,7 +2,7 @@ use std::{fs::File, io::Write};
 use teardown_api::*;
 
 pub fn gen(api: &API) {
-    &println!("Generating for Markdown...");
+    println!("Generating for Markdown...");
 
     let mut contents = String::from("# Teardown API\n\n");
 
