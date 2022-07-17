@@ -1,13 +1,6 @@
 use std::{fs::File, io::Write};
 use teardown_api::*;
 
-/*
-DebugPrint:
-  args:
-    message: { type: 'string', optional: false, description: 'Message to print' }
-  returns: {}
-*/
-
 pub fn gen(api: &API) {
     println!("Generating for Yaml...");
 
