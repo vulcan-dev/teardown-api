@@ -47,6 +47,9 @@ h1 {
 h2 {
     font-size: 1.5em;
     margin: 0;
+}
+
+.details h2 {
     padding: 1em;
 }
 
@@ -109,9 +112,28 @@ input {
     outline: none;
 }
 
+.fname {
+    color: #fff;
+    text-decoration: none;
+    width: 98%;
+    text-align: center;
+}
+
 div.wrapper {
     margin: 0 auto;
     width: 40%;
+}
+
+div.details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.hidden {
+    display: none;
 }
 </style>
 
@@ -119,23 +141,38 @@ div.wrapper {
 function search() {
     const input = document.getElementById(\"search\").value;
     const x = document.getElementsByClassName(\"func\");
+
     for (let i = 0; i < x.length; i++) {
-        const y = x[i].firstChild;
-        if (y.innerHTML.toLowerCase().includes(input.toLowerCase())) {
+        const y = x[i].children[0].innerHTML;
+        if (y.toLowerCase().includes(input.toLowerCase())) {
             x[i].style.display = \"\";
         } else {
             x[i].style.display = \"none\";
         }
     }
 }
+
+function toggle(name) {
+    const x = document.getElementsByClassName(name);
+    if (x[0].classList.contains(\"hidden\")) {
+        for (let i = 0; i < x.length; i++) {
+            x[i].classList.remove(\"hidden\");
+        }
+    } else {
+        for (let i = 0; i < x.length; i++) {
+            x[i].classList.add(\"hidden\");
+        }
+    }
+}
 </script>
 <div class=\"wrapper\">
-<input id=\"search\" type=\"text\" placeholder=\"Search\" onkeyup=\"search()\" />
+<input id=\"search\" type=\"text\" placeholder=\"Search\" onkeyup=\"search()\"></input>
     ");
 
     for function in &api.function {
-        contents.push_str(&format!("<a href=\"https://teardowngame.com/modding/api.html#{}\" target=\"_blank\"<div class=\"func\">", function.name));
-        contents.push_str(&format!("<h1>{}</h1>", function.name));
+        contents.push_str("<div class=\"func\">");
+        contents.push_str(&format!("<h2 class=\"fname\" onclick=\"toggle('{}')\">{}</h2>", function.name, function.name));
+        contents.push_str(&format!("<div class=\"details {}\">", function.name)); // hidden
         if let Some(input) = &function.input {
             contents.push_str("<h2>Input</h2>");
             contents.push_str("<table>");
@@ -187,7 +224,8 @@ function search() {
             }
             contents.push_str("</table>");
         }
-        contents.push_str("</a>");
+        contents.push_str("</div>");
+        contents.push_str("</div>");
     }
 
     contents.push_str("</div>");
