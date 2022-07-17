@@ -45,11 +45,16 @@ async fn main() {
         std::fs::create_dir_all(gen_dir).unwrap();
     }
 
+    let start_time = std::time::Instant::now();
+
     for arg in &args[1..] {
         if let Some(func) = functions.get(arg.as_str()) {
             func(&api);
         } else {
             println!("Unknown generator: {}. Available generators: [{}]", arg, avail_generators);
+            return
         }
     }
+
+    println!("Generated in {}ms", start_time.elapsed().as_millis());
 }
