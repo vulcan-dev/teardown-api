@@ -2,8 +2,6 @@ use std::{fs::File, io::Write};
 use teardown_api::*;
 
 pub fn gen(api: &API) {
-    let start_time = std::time::Instant::now();
-
     let mut contents = String::from("# Teardown API\n\n");
 
     for function in &api.function {
