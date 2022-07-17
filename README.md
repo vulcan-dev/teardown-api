@@ -1,4 +1,12 @@
 # Teardown API Snippets
+## Usage
+```
+./teardown-api.exe [-vscode] [-subl]
+```
+
+## Installation
+- VSCode: Search it in the extensions list.
+- Sublime: Copy "**Teardown.sublime-completions**" to "**C:\Program Files\Sublime Text\Packages\User\\**" (or wherever your installation is).
 
 ## Version 0.0.1
 Initial Release
