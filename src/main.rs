@@ -2,6 +2,7 @@ mod vscode;
 mod sublime;
 mod atom;
 mod json;
+mod md;
 
 use std::{env, collections::HashMap};
 
@@ -22,8 +23,9 @@ async fn main() {
     functions.insert("vscode", vscode::gen);
     functions.insert("atom", atom::gen);
     functions.insert("json", json::gen);
+    functions.insert("md", md::gen);
 
-    let avail_generators = "sublime|vscode|atom";
+    let avail_generators = "sublime|vscode|atom|json|md";
 
     let args: Vec<String> = env::args().collect();
     if args.len() == 1 {

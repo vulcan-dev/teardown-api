@@ -1,7 +1,7 @@
 # Teardown API Snippets
 ## Usage
 ```
-./teardown-api.exe [vscode|sublime|atom|json]
+./teardown-api.exe [vscode|sublime|atom|json|md]
 ```
 
 ## Installation
