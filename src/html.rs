@@ -15,6 +15,22 @@ pub fn gen(api: &API) {
 </head>
 <body>
 <style>
+::-webkit-scrollbar {
+    width: 1em;
+}
+
+::-webkit-scrollbar-track {
+    background: #21252b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2b2f36;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4b4d50;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
@@ -31,12 +47,11 @@ h1 {
 h2 {
     font-size: 1.5em;
     margin: 0;
-    padding: 0;
+    padding: 1em;
 }
 
 .func {
-    margin: 0 auto;
-    width: 40%;
+    width: 100%;
     padding: 1em;
     background-color: #21252b;
     border-radius: 0.5em;
@@ -55,11 +70,8 @@ h2 {
 table {
     width: 100%;
     border-collapse: collapse;
-    border-spacing: 0;
     border: 1px solid #fff;
     border-radius: 0.5em;
-    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
-    margin: 0 auto;
     padding: 1em;
 }
 
@@ -70,18 +82,55 @@ th {
     padding: 0.5em;
     border-bottom: 1px solid #fff;
     font-weight: normal;
+    text-align: center;
 }
 
 td {
     padding: 0.5em;
     border-bottom: 1px solid #fff;
+    font-size: 1em;
+    text-align: center;
 }
 
 a {
     color: #fff;
     text-decoration: none;
 }
+
+input {
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    background-color: #21252b;
+    border: none;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
+    color: #fff;
+    outline: none;
+}
+
+div.wrapper {
+    margin: 0 auto;
+    width: 40%;
+}
 </style>
+
+<script>
+function search() {
+    const input = document.getElementById(\"search\").value;
+    const x = document.getElementsByClassName(\"func\");
+    for (let i = 0; i < x.length; i++) {
+        const y = x[i].firstChild;
+        if (y.innerHTML.toLowerCase().includes(input.toLowerCase())) {
+            x[i].style.display = \"\";
+        } else {
+            x[i].style.display = \"none\";
+        }
+    }
+}
+</script>
+<div class=\"wrapper\">
+<input id=\"search\" type=\"text\" placeholder=\"Search\" onkeyup=\"search()\" />
     ");
 
     for function in &api.function {
@@ -138,9 +187,10 @@ a {
             }
             contents.push_str("</table>");
         }
-        contents.push_str("</a></div>");
+        contents.push_str("</a>");
     }
 
+    contents.push_str("</div>");
     contents.push_str("</body>");
     contents.push_str("</html>");
 
