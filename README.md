@@ -9,6 +9,24 @@
 - Sublime: Copy "**Teardown.sublime-completions**" to "**C:\Program Files\Sublime Text\Packages\User\\**" (or wherever your installation is).
 - Atom: Edit "**snippets.cson**" (**%USERPROFILE%\.atom**) and paste the content from "**Teardown.completions.cson**".
 
+## Images
+### VSCode
+![](https://imgur.com/QGHvnY7.png)
+![](https://imgur.com/vAHYIPd.png)
+
+### Sublime
+![](https://imgur.com/YarXaBf.png)
+![](https://imgur.com/undefined)
+
+### Atom
+![](https://imgur.com/hrh728d.png)
+![](https://imgur.com/uQTEAiL.png)
+
+### HTML
+![](https://i.imgur.com/lAwpP5Q.png)
+
+### Not adding the rest.
+
 ## Version 0.0.1
 Initial Release
 
