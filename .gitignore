@@ -4,3 +4,4 @@
 *.lock
 *.code-snippets
 *.sublime-completions
+*.cson
