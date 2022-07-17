@@ -24,6 +24,6 @@ pub fn gen(api: &API) {
         }
     }
 
-    let mut file = File::create("gen/api.toml").unwrap();
+    let mut file = File::create("gen/Teardown.toml").unwrap();
     file.write_all(contents.as_bytes()).unwrap();
 }

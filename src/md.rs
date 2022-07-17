@@ -2,7 +2,7 @@ use std::{fs::File, io::Write};
 use teardown_api::*;
 
 pub fn gen(api: &API) {
-    println!("Generating for Markdown...");
+    let start_time = std::time::Instant::now();
 
     let mut contents = String::from("# Teardown API\n\n");
 
@@ -31,6 +31,6 @@ pub fn gen(api: &API) {
         }
     }
 
-    let mut file = File::create("gen/api.md").unwrap();
+    let mut file = File::create("gen/Teardown.md").unwrap();
     file.write_all(contents.as_bytes()).unwrap();
 }

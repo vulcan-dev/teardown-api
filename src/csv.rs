@@ -30,6 +30,6 @@ pub fn gen(api: &API) {
         contents.push_str("\n");
     }
 
-    let mut file = File::create("gen/api.csv").unwrap();
+    let mut file = File::create("gen/Teardown.csv").unwrap();
     file.write_all(contents.as_bytes()).unwrap();
 }
