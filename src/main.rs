@@ -4,6 +4,7 @@ mod atom;
 mod json;
 mod md;
 mod csv;
+mod toml;
 
 use std::{env, collections::HashMap};
 
@@ -26,8 +27,9 @@ async fn main() {
     functions.insert("json", json::gen);
     functions.insert("md", md::gen);
     functions.insert("csv", csv::gen);
+    functions.insert("toml", toml::gen);
 
-    let avail_generators = "sublime|vscode|atom|json|md";
+    let avail_generators = "vscode | sublime | atom | json | toml | md | csv";
 
     let args: Vec<String> = env::args().collect();
     if args.len() == 1 {
