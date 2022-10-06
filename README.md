@@ -5,7 +5,7 @@
 ```
 
 ## Installation
-- VSCode: Search it in the extensions list.
+- VSCode: https://marketplace.visualstudio.com/items?itemName=vulcan-dev.teardown-api.
 - Sublime: Copy "**Teardown.sublime-completions**" to "**C:\Program Files\Sublime Text\Packages\User\\**" (or wherever your installation is).
 - Atom: Edit "**snippets.cson**" (**%USERPROFILE%\.atom**) and paste the content from "**Teardown.completions.cson**".
 
